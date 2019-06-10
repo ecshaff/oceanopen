@@ -785,3 +785,272 @@ Processing by FormController#index as HTML
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (294.5ms)[0m  [1m[35mCREATE DATABASE "openocean_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (256.0ms)[0m  [1m[35mCREATE DATABASE "openocean_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/form" for ::1 at 2019-06-10 10:55:55 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 10:56:59 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/form" for ::1 at 2019-06-10 11:00:29 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/form"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/form" for ::1 at 2019-06-10 11:00:33 -0400
+Processing by FormController#index as */*
+  Parameters: {"id"=>1, "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old", "form"=>{"id"=>1, "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form/1" for ::1 at 2019-06-10 11:00:46 -0400
+Processing by FormController#show as */*
+  Parameters: {"id"=>"1", "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old", "form"=>{"id"=>"1", "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form/2" for ::1 at 2019-06-10 11:00:49 -0400
+Processing by FormController#show as */*
+  Parameters: {"id"=>"2", "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old", "form"=>{"id"=>"2", "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:00:56 -0400
+Processing by FormController#index as */*
+  Parameters: {"id"=>1, "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old", "form"=>{"id"=>1, "date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"old"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/form" for ::1 at 2019-06-10 11:01:26 -0400
+Processing by FormController#create as */*
+  Parameters: {"date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  INSERT has more expressions than target columns
+LINE 2: ...S ( '0', 'delete this one', '', 'Testing', 'Lauren', 'new' )
+                                                                ^
+):
+  
+app/models/form.rb:44:in `async_exec'
+app/models/form.rb:44:in `create'
+app/controllers/form_controller.rb:14:in `create'
+Started GET "/form" for ::1 at 2019-06-10 11:01:51 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:01:51 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:02:20 -0400
+Processing by FormController#index as */*
+  Parameters: {"date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"date"=>"0", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/form" for ::1 at 2019-06-10 11:02:53 -0400
+Processing by FormController#create as */*
+  Parameters: {"date"=>"6/8/2019", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"date"=>"6/8/2019", "text"=>"delete this one", "image"=>nil, "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  INSERT has more expressions than target columns
+LINE 2: ...8/2019', 'delete this one', '', 'Testing', 'Lauren', 'new' )
+                                                                ^
+):
+  
+app/models/form.rb:44:in `async_exec'
+app/models/form.rb:44:in `create'
+app/controllers/form_controller.rb:14:in `create'
+Started POST "/form" for ::1 at 2019-06-10 11:04:49 -0400
+Processing by FormController#create as */*
+  Parameters: {"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+PG::SyntaxError (ERROR:  INSERT has more expressions than target columns
+LINE 2: ...8/2019', 'delete this one', '', 'Testing', 'Lauren', 'new' )
+                                                                ^
+):
+  
+app/models/form.rb:44:in `async_exec'
+app/models/form.rb:44:in `create'
+app/controllers/form_controller.rb:14:in `create'
+Started POST "/form" for ::1 at 2019-06-10 11:05:41 -0400
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "date": "6/8/2019",
+    "text": "delete this one",
+    "title": "Testing",
+    "author": "Lauren",
+}
+  
+ActionDispatch::Http::Parameters::ParseError (767: unexpected token at '{
+    "date": "6/8/2019",
+    "text": "delete this one",
+    "title": "Testing",
+    "author": "Lauren",
+}'):
+  
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:117:in `rescue in parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:111:in `parse_formatted_parameters'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:381:in `block in POST'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch'
+rack (2.0.7) lib/rack/request.rb:59:in `fetch_header'
+actionpack (5.2.3) lib/action_dispatch/http/request.rb:380:in `POST'
+actionpack (5.2.3) lib/action_dispatch/http/parameters.rb:55:in `parameters'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:290:in `_wrapper_enabled?'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:244:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/form" for ::1 at 2019-06-10 11:09:16 -0400
+Processing by FormController#create as */*
+  Parameters: {"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren", "form"=>{"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren"}}
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form/3" for ::1 at 2019-06-10 11:09:30 -0400
+Processing by FormController#show as */*
+  Parameters: {"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren", "id"=>"3", "form"=>{"date"=>"6/8/2019", "text"=>"delete this one", "title"=>"Testing", "author"=>"Lauren"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/form/3" for ::1 at 2019-06-10 11:09:45 -0400
+Processing by FormController#update as */*
+  Parameters: {"id"=>"3", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>"3", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/form/3" for ::1 at 2019-06-10 11:09:52 -0400
+Processing by FormController#delete as */*
+  Parameters: {"id"=>"3", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>"3", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:09:57 -0400
+Processing by FormController#index as */*
+  Parameters: {"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:10:09 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:15:53 -0400
+Processing by FormController#index as */*
+  Parameters: {"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:19:17 -0400
+Processing by FormController#index as */*
+  Parameters: {"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>3, "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form/5" for ::1 at 2019-06-10 11:19:30 -0400
+Processing by FormController#show as */*
+  Parameters: {"id"=>"5", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>"5", "date"=>"6/8/2019", "text"=>"delete this one", "image"=>"", "title"=>"Testing", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started PUT "/form/5" for ::1 at 2019-06-10 11:20:49 -0400
+Processing by FormController#update as */*
+  Parameters: {"id"=>"5", "date"=>"6/8/2019", "text"=>"Went downtown and stopped by the Liberty Bell.", "image"=>"data:image/jpeg;base64,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", "title"=>"Where it all started...", "author"=>"Lauren", "status"=>"new", "form"=>{"id"=>"5", "date"=>"6/8/2019", "text"=>"Went downtown and stopped by the Liberty Bell.", "image"=>"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUTExIVFRUVFRcXFxYXGBcXGBgVFRUWFhUVGBgYHSggGB0lHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGxAQGisdHR8tKy0tLS0tLSstLS0tKy0tLS0tLS0rKy0tLS0tLS0tKysrLS0tKy0tLS0tKzctLSsrK//AABEIAMIBAwMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAABAAIDBAUGB//EAEIQAAEDAgMEBgcFBwMFAQAAAAEAAhEDIQQSMQVBUWETInGBkbEGMnKhwdHwIzNCUuEUFWKCkrLxJFOiBzRjc8JD/8QAGgEAAwEBAQEAAAAAAAAAAAAAAAECAwQFBv/EACQRAAICAgICAgIDAAAAAAAAAAABAhEDIRIxBBNBUSJhFDJC/9oADAMBAAIRAxEAPwCkEoQRUiCQgnBKEABOCQCICQDXMBs4A/XuUWJwmYNDT6oIAPMg/BT5U4IGQ1sMHNbeHNbE95tzVNzXs1FuIuPDctJOACTin2CbXRnsrA/Xkfmpm/53+I+IT62z2m7bHxB7Qs9tcs9YW+tN4WEsVdGyyX2P2wPsib+szgQRfR2/v0VvAf8AaD2j/cqG0qodSJBnrM7d+p0K0MAP9I32j/cunFpGE+yoWlzg3eSB4lXtkB9Oq4EFpy92oWbWMGeF/BdPh35nDM2JbPEXg2Pf7lUXUkKS/El9Ftotc6rTJh/SEtB0cBrB3HlvW6XLH9GqAb05H4qp8lsZl6vjxageXml+YXBRwn5ZRyro6MSvX07x5hKl+L23eaOMdDCYuIPvCWEMtJ4ucfemnsGhOCbmUxamFUiRkpSlCIbzToRW2hjOiZmgk6NaN53dyPosKlVlUvFWS+4YTl9QawVV202OjJ3kjkOqXT7li7D2vUfhajBVh5xlG4JBex1N/VsOIFl5Xmzk5Uel4kElZ2WLwbqcWcAdM0SPBVsy2Nr1SC4Onq1QAOAOHpEgd8nvKzgQeC6PFnJ405bOfyIJTdaIQ5ZXpLiHNbTDXEZi6YMTAET4lb0tXO+m9QNp0iAT13Dhq1Xnb4aFgj+aMtlSBGYf1BJZQxh/I3xPySXn1M9O4GjCKQCQlc4wwiAk1IpDCEgEkQgAwiECkEhhATmJAohqAJAk+i1whwBSDU8MUjMXF+j2vRviTOV2ncVcoUXMwwY4dYOMj+ZajKZvyv3LJpekVLPlLHBn5o38xwVxbRLVlGqLrd2FjJIa4RlbE7joFh7cxjOkHQOaW5QXGD60mQJ7lX2TtY9Nle4Ma4EGQRoJFxxICuPaYmtUd9sGmIqluhqnxWkae9c/sXa2Gw1Op0lUEl8hrOsTLRpCr7U9OKDqT20mOLnAtGaIANpMGd5XpY8yjBI86eFymzocHjaVQltOqx5GoaZhUtuekVHCuayrnLnCYa2bcV5xsradTDOc6kQ1zm5ZLZtylV8XXqVDL3vefzOJdA71D8p1rs0Xiq99HrAxdKvQdUpODm6TwNiQeBCbsHFsqU7EB0u6kguABiYXFeiW1mUqbqD2lwrOF9wJgQRwMLv9lYdlOnlY0NGZ+g4mT2LXFkc9mWWCiSFqgqiFcKiexdMWc8irmRCe9ip43Emk3MM3a0ZoBsZ7pTnJRi39ExVtIqbVaXuazc1wMnSHNLTPiocAzoOkosylpezMQAZLQWghx0335qo+u93WLYtcuM+dgo3B1QvJfmBjSImDOll4mXI5ybPWxxUYpHpNWgyvRLxGYSSB1iXAFgkg3MNA7lhU8I4gWiZ9xIWjsHZwZhKNRlTo3OGhlzS4mLb2kxutxCsV+kzgVGhpA1BBDp3gj5BV4uaUHxJ8jEpLkZwwcLm/T6lFCmf/AC//ACV3T7jRcp/1Gp/6Vh/8w/tcurLkbjswxQqR580c0kW6alJRyR1GsE5ABOAXEaghEQlKISGFOCaiEgCk1JFIY9sQSdNfBVsNtbDuMdIBcC4Iv4IbXrup0szdS4NG/WZ8lzbadrgdgHmmlYHVt2q2nim0nMBaIJcTaCJvuVD05xTatRtShUYGtAApBrpn80+q4z2LGknkiBvVqArLuP8ASCtiadNrg1oYIIYMuY6S4zJKpU6Y4JtNsEjgT4ajzVhhVJITY3MQbQO4aRxVY0w6o4ndAnid6snWZsPIf4UGEPVk6kkppCbCaY0UTacGwVklNlUIheJ3Jzh3J5dCic5AiTCHrU+T2/3D5r2DCN6p9p3wXjuGN2n+Nv8AcF7XgaPUPtHyC38aVWcvlp0iAWTmEFWHUFF0K7uaZwOxj6fJVcdS6j7fhKvtpncoMXTljgKjWkkslw3zB331UZJpRaHCLbON2rRc5gDRvkjjAKi2bSLQ4OtpvnWVcrsaLOqFxBMgcRyEoYR7Wuq/ZkyxoEwIdmkG+mkd68hyV2etGLo7nY1DpsDRaxwlrhImNHGQrm2XRVA/hF+8rm/RjazzNN1Om4MaIDHdcDMb759YraxFRlU9V5kCIdAcL3B4qcGSKybKzQbhokolc9/1IfOEaAL9M3v6rltMBBjgsH0+qA4ZgJEivT7dHD4ruzf1tHNh3KjzsioLZUl6FhMIxzZdTcTLpI0s4j4ILzf5j+jv/jL7OVARTZRlamYQimwnSkMISHvCBKIQAQVJTUcJ9NIZm+k9QhtNu4lxPaIA8ysqn6q1PSkWpH2vgsqnotI9AESjfjHgoymOqRvHPRMRI89bXVvvaYTHYxjbEyeV1ELlriDkkkxrG7xTMRjIqTTAY21ot2lHyHwWK9UZCR+Kw+KDTlAEKCvQaIItmJJEG/PkmYl7mdlhzEpoRZzI5lqbO9FMbXp9JTptc0GID2zpMwdyxywgkEXBgjmLFMQ7P9BB5KWb6/wg6YtB7/hqmBPgATFo67de0QV65jdudG006QHrHM/e3TSOw+K8ewlRwsQdQe63yXfbHrUsQ1zmFxfmIyXBEEXtaCJWTcukxZI9MvVvSDEOAIeBAghrRedXHhHJV8J6QV84e92YGZpkADuygHnxRq7GcTOYWjskgERuIA96h/dzABmqtETYkWM9/wBFYy9iepGfGLXR02D2/TqGAxwAkudNg38w1vyXF7ZxwbiajcudzXuGZxvbfA0md0K+HYemZa++tiNd+/iUquIpl5cwGSSZueBvAvv1K1UpSX5scMai9Iq4PEVC2S1oOYAS06R23WbjMNUfVqDMbESCTpJgRuW3VxDrwMuYyYY7ff8AEOayhWea1QOqOJLGEuGUTrumOKm49I2SkW9i7OdRdVzOAlgEmw1mQd62sbt0Fjc1RpMuactNuZrQIbFQy69jPNYT6TSZIef5gPeLpNdSBtTbPN2Y8Fjw23Rry1tmgNstJMNqPENsXGM34jaxnmonU6uNinTaymwPl7gLgs0E8Z+KqVMY7dDRyaT/AHQFf9G9qGmS0SA4uf6oN7TvWk55OJEIQUtGxSxeGYMhqEFpII6esOtJm2W15QXMbTH2ryMzgXTMATmubdpKS5vV+zqKzQEJhEoruOIQSRCUJABEFJOAQMKdTTIT6SQGb6TOGVlxIcbb4I/RYprAC/go8fjC5+7Um/b+iqGoTuk8YPxVRGyWrjCNyrB+cyTpuI8uKc8E6wfrgum9F8Jh6DRXrHpKh9Sm0TlH5jNpRJgkZu1sG+kGjeWNcRp62o+uCzq9AhzcwiV1e0z+0VDVgtbAEHcBusqG0qIqOaRPUEac5UrLF6H65dmBTY5zokwBN+1WcXQJdTbHrEnthXKNEtNieGnOVqbNrMzUhVbHROLg6wsdWmdQq5RfyS4yWzodjY+tSouZTMMyHNJgzEZxDVxO2MO6nUzEdR5Ja68SPWbBvN16FgsRTM/aBwMkAkDX8PVWL6RbOFZhDQGPnOAS8zrN3aRyWanKLfIjVnGh4KfB+iqlSk5pIImDFri3MJorOHELeyqNFjurcyt30NqfaubmIDmHQxdp7RxPiuTbXWvsjHBrxBOaDHeNbrOX6KTO3rsp72z7TiZ7hKqPr0m6MaP5R/8AULHftotIL2gttrxIFzGsnctMhpq03QBmY1xG6S0krJxfyaJhftADgOz9AeSbUxb7TmgxrMCbXJNvBM2o5pdTywbnTtb81PtB7cuUEEh7ZHC6aiTZWove8EgDhMgSbcpVWOvlytBs3iLH9fcrmCxAYz1SZc/QToQoIJr6H1wey4N1oloiybG4VzWZ8wtFo3k63Ntyh2WwvcZcbQbGN/JWsZVqOY5pZHC/Byg2cHMzEw0kCJjilSsLfEmx1AMPV1c18zfQTvUdOoWZHNsYPwT8S/NAzNJh+hixbbQKGoOq3v0TdDi3omrbQqkzbd5JKNuiSx4o3sjHeiCkjK6DlBKdmsgikAQE4JgRSGOCbWeQ0kfQ3pAIYv7t3Z8QgZxlXBVXOhjS4kFwjhvVrC7CxBiaVS+twN9plbWzj/qI/gXRUDdDdMEcnW2b+zvyvAJgHUnWfknsqfw/BXPSR3+o1k5WW4W+j3qq1v1Pv+Ka32JujQobUgR0ZP8AVHmm1tpzpSaP5VUygcPE/JB57PetEkvghyk/kFXFH8ob7MN8lRxNQu1JPaZVhw7FXeVDSstSZQey9rdn6LovR/ab8ppPc5zHAiDeJ4E6LEqBHDvYCMzSUn1QVZp4PZVMP+0qEtvbTskrVZsXDOYRkIcQQCC5xBn1gJg6I130deubDlYqTAOlrejJGsExIG/VZpstRoqU/R/DZXMIe52uaIcO3lyVPH7Po0shpghxeQcxm2UQtljHF7wJzAEuMjlO7jCzdtPkUwRfpXSdfwhXF7CSK9Bv2tMa9Zo7YIW/WaRVDQxocBa5IAgrnWH7VvtjzC2qjA5waB60kEzMAExrySydhDSG4trmFsinc2gaaX8vBOxLnC/SNd1gIAbe+qjxWE6PLYdYxBExpexvqg6BoBLSJkCCc0SOCQx1B4uXVi2HGwIFlBUrdaM5LZN5NxZPc+ASQDLnACAIjQ2FzdIVHdIGzaQJgTBjlzVLoljK4p5eqSXdpKGDLAT0jSRFrHv0Uj6xOaCQWjUGJh2+NTdDD1HEOJc45Y/EYu4DjdL5Gv6j3ljiOjYW9V8w3iwxohWnKxuhg67oidSnEz1pgkvm9vUJ0kwq+LpFwpgcN5jfzhMX0TNwjv8AdH9TfmksPF1KjXloywObeHailZfE24SCAKMKzEKKEooASCRQSGSAJmM+7d2fEJzSm40/Zu7PiEgM7Z3/AHH8hXR0Tdc1sr7/APlK6Glqk+xow/SB4/aHfy/2BVm1CNyl24f9Q/tA/wCIVenUkSDY+9VEllttW12pjq3L68EAZMTfSOaRLu7f29oMLQghqVPqf0VarU5fXgpatRo5nlp2Ks954KWi0yNytYN0HQfXcqZVjDKG6KNrFYiJ7pHirGzq4bSBzQYcB2m4Nvktens7Dmix5ZUl7GucQG3OXcY0VbG4Ci1ob9q0byMpIc4iN1hqudZY2aPoq0MTd7s2rYzcyR8iszaTpDTMjpTHHSDPuVkUqU2fUnQyG63+XvUG1GNa1gb/ALp8MtlvHsmRAwfaN9ofBb2H++ZeYDveHcQsLD/es9tvfcWW07AvGYtDhcxaOO8om0nsUVoXpFigHU2kEQZnlMceSruILjDgczhGu907wPNWXbOD2/aAl4mHZzpubGnFUxs4g5srrEHdxm6h5Y2OlSH2IiRZ79c2h00B4IUnTVtfLDiQCbDKJ04hN/d7okMJk8TvvuKNDZtSXGMvV0DoMTob8kLNEVbHVGgZ+sDIMazrPD4pmFIh4JAkCNdzgTuSds19oAMi8E2P9RTP3dU/23HkSR5KuaY0tUWKQFhmB+8NpP8A+Z4gKtiz1Wfp8FNQwbmmcjh1XDedWlo1HNNqYZ5ABa4AbzM+STkgWjExQGYpLUqbLkzJ9ySk0tFpEBKE4Lc5wEXSSSQA6EEkikA5iZjfu3fW8JzdUzHH7N3d5hIZm7J+/PsldHSC53ZH359krpaJi/AT4JPsZzO1zNZx/iPuEfBV6N2id4E806s6ST2nzRY2ABwA8gnATC1nBR1XOU5aRqo6oWhBVexROUzgoXBSUiMqbDFRFPo6qZdFI7TD1nHDUw29oN/VAMG+sboVvBNYakVHPaAIGhDhqRK53DlxpWBIbMxrBv5yp8LiHAyBfLrqBod+8R714848JNlXs7fG18KWkwNIAgbzMjq8ly/pm6iaVLo2wendJiLFggaKvh9oEyAZsbxImdQT2qhtrF5mMadRVJ7iwLbBmm5pMcpJ/BVw7SajQNS4AdpIC6LE4PIxrHPIdIOYGdDGru1c9hTFRh4PafeF0VbaLXayeGmo/wAK/OnJTSREOhMph5LmvdrB0PYOzkrVLAN/FVc3+HL6xnW54WWNU2g1oEGSZPhbuKJ2094j36RujssvOl7GrstNG5hsBSDWjp3NgiJaL/JNrbFpuzM6fLmaLhvB8u0N5hZTcY4vGa5H1c+CkqVi4zmAMX4Azp2LOPsX+h8l9CxPolSGar+1WEnJliJ1FjPNQYnZDHACliABH8WvVMuieBVin0m8NcxsnXiYidwCY6RGQtEe+Ry71XtyfMrBtfQxuwHAT0zXDM2OsbgEktjnbwVRmzsQ0uBrANg5YqCZJtYmdJWjUxrgA1zRlI11Pb23UOHaA5/2hLQABa8zoE1myL5C0KhhawaAajgYvNUa/wBSSu0sRQgSxpPEiSfekl7sg/xM1GU3uRX0hziCKAKTigY4hIINPFOQAAdFHjvu3d3mE9Mxx+yd3eYSGU9it+2/lK2tqVclKN7rd2/5d6yfR/7+9oYSe5HbOKzutpoOz9fkpZRnsbIPO3jZWgyZ+tVEG2HtDzV6iyZjVaY1ZExraUtBnTUH4KCtR4XWh0QOg+jyUVdrhaGuHgR81u4mKZkVGqs5aWJpiFnvCwlo2jsiyotRIRaFnZZtej+M6N45iOHYrbsbJzvAa2SQ2DN9Y/VYdAwQtzB4anXs95a4d89ixljUmDHYEzcUy1gmdTmzEGDFtwVf0ieyGhlMt+1ku3OGQQABpF1o1tlPHqPdl0Oo8rLO9INnGkymekD5foN3V/T3J48PGVtEWUcM2ajRxcB4rd/ZBlzVAG6ta0XkneY8Vg4UE1GAalwA7SYC1q9OqARkMietBMu0md1inmxc2O6IsLslhcTUvTOhaY1sL33gq07ABuZucFpAi4JAad4EX7lmvq1JgtytNi0ExHKTqrLMd1gQDBs5pAuOR1XPl8a4ji9l9+Fc0NyF2WNTYiRYXkQLJh2YR1CTmcJcXEWiTII1ElGntmDcTIiD6vMxx5hWKWKY94fnyAQMsEjTS5teCsFilXRToo4jZ0Oa1lU5XSOQIvHObFKng3NMh0m4kiBHGCdQtajjKLnQWhsGY6pJAiATqRrbRLab6TgWte2neb3aZgwJEg743LL1ukmh0ZfRVC2SwkyLTqd8Ddu8FMyp1PtGRcAjfvjy71r4OtRrP6zjmaR1qYADwQYcRv7BG9UsPhGmrVp1qrcoYC1zbl0uBbE8IM8JWXoctBRnFjRpPfCS2n7OwxP3jP8AiNLaB0JKvUg4nPEoSiEC1e8YiKSICPNAxIwmGu3j4XSNQnRp7TbzSsZKGpuMZ9mQOI80mNed7W+9Q42qWjKHFxPZ8EmxpFYMDeZOqiymZ5pU6ub1tQpmhZtlpDKw9UcXt85+Cu0I4qlrUa3gC7v9X5rRA4t/xuTWbix+rkiZtedYHBV6tbig9irVaZ+v8rVZ7M3gK+IMlVn0+Y8QrUxuBUn7UfyC4j6sufJmdm8MSoyyxOZTWixjnfg9xQfQeLlscNFEctsp4yClRJ0C1cMQ3mdLX+vrVUQeJj3qelj2U7gZjxO7sXTHj8nPJM3WVjYO3i1/ceaz/Spw6OnaDn4/wlZpxrqjwQIM2hW/SCpmp0j/ABkHtAKpS+CKoy8GftGe23zC6+q664/DfeM9tvmF1dU3VxJkPa4b3R71cw+JY2xLXDnT/wArMlCUNWJOjXzYc/hpf0uanU6WGJuKcQBE7+Oi5zHYlzHUg2Os7KZEiPcrTag0d1Dzu09jt3YfFZvGi+RufuvDO3M7nR8VFU2Dhz+lT9Csl4I1tKQeeKXqHyLx2CACGPqNB4FrvcDv0VXEbDquuKmnFrh74IQGJdxTmY5w/QkKPT+h8iEbKxP5mf1BFWv3m7i7xQU+hfQWYLq7dxnkLo9I46N8TChdjgRFOm7tIyD5+5MNSqd7Wdgk+JsthFronHV0dg+JULqlEWc4E8JLj4BQuwoPrFz/AGnGP6dFKymAIAA5CwQFB/bPyUz3w0fNDpap/E1vsiT4u+SeEZSGMbhwfWLne0fhoosewMLXAgCwA5jgrIKrbYwgqMHWgtNu/wCgk9lIgpkcVLmUOFwhd1Q6SBqd/eEn0qjPWa6OIGYf8fkmqEy7hjFQiBIYCCeBJ6viPervSEz1Aew5YWLR6XM6p0bogNktOgkz71PTxx3Cey/kUPFCXaBZJx0mW6tBxvlPioH4V+sFH95OH4D4O+Sa7bBG7z+SFigg9s/0R9DxsnkURqXO5Cygq7SJ3efyVY1hwPg75LHJjT+zaGR0aD9oZfUYB7Rze7RVq+PqPu53kFVfXaN3jb4pMqucYZTk/wALSffBhQsUU9Ip5H9j+kJ0kpruZAVsbEruAzFreRJJHmFfwewqbbvPSHnYDlG/vXTGDOeU0YbNoNZYGN06n3fXatnamU0KJY7MC8meJIMlWcVsnD1IzUmiPy9XyUW2mtbSptaIDXQBwEFacKM+Vsy6B67fbb5hdRVK5Wieuz2m+YXUVdU4hIaSlmTUmpklTaTuvQ/9g+Cvh2qztpevR/8AYrxKQwtlvqkAb2m7D3bjzEJwINvUcfwuNj7LtD3qMFItmxgjmgB7mkWNjzTZQbVLbGXtGgJ6zfZcd3IouaCC5hzNGv5m8nDcgBSgosx/I/8ApKSKAz4RlJFZGlClJIIwlY6EigEkWOgpuLPUPaEU3E+qe0eaEBBs10PPZ8lpdKszBesexXggRO2uVHVw9J5lzGk8Yg+5NlEJ2Ahg6e7M3sc4KKps2jBMOLoMEucTMdqmlEFOxUUdnYJr6c1WODpNi52m5WqezKO9k9pPzUsohNMTQqeDpC4psHOJPvVkVDu+ShzI5laaJaZJnKWdMBRhVyFxCHKlt49RntfAq5Cpbc9RntfAqZPQ4rZk0z12e03+4LqKuq5an67Pab/cF09U3SiOQ1HvTMyQcqJoqbQ9eh7au7lRx/3lH21elJDYEEZQKBAKaCQcwMOG8cOB4jkimu+vr61QBYG0Gj1qd98PIHhuQVcjl70EDKqQSSWLNQlAIpJDEUAkkgAlRYjRJJCAjwHrns+SvFJJMQgidEkkhiCISSTEIqRqCSYDympJJiDCbSN0ElSEyYKntz1G+18Ckkh9CXZkU/XZ7TfMLpqmqSSEDGb+74oFJJUSZmPP2tH2lpNSSSQ2JJJJMkCbU0+uKSSACUkkkxn/2Q==", "title"=>"Where it all started...", "author"=>"Lauren", "status"=>"new"}}
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:32:42 -0400
+Processing by FormController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:36:15 -0400
+Processing by FormController#index as */*
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:36:44 -0400
+Processing by FormController#index as HTML
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/form" for ::1 at 2019-06-10 11:36:48 -0400
+Processing by FormController#index as */*
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms)
+
+
