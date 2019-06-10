@@ -3,7 +3,7 @@ class Form
   if(ENV['DATABASE_URL'])
         uri = URI.parse(ENV['DATABASE_URL'])
         DB = PG.connect(uri.hostname, uri.port, nil, nil, uri.path[1..-1], uri.user, uri.password)
-  else      
+  else
   DB = PG.connect({:host => "localhost", :port => 5432, :dbname => 'openocean_development'})
 end
 
@@ -27,7 +27,7 @@ end
   def self.find(id)
     results = DB.exec("SELECT * FROM form WHERE id=#{id}")
     return {
-     
+
         "id" => results.first["id"].to_i,
         "date" => results.first["date"],
         "text" => results.first["text"],
@@ -35,7 +35,7 @@ end
         "title" => results.first["title"],
         "author" => results.first["author"],
         "status" => results.first["status"]
-      
+
     }
   end
 
@@ -43,7 +43,7 @@ end
   def self.create(opts)
     results = DB.exec(
       <<-SQL
-        INSERT INTO form (date, text, image, title, author)
+        INSERT INTO form (date, text, image, title, author, status)
         VALUES ( '#{opts["date"]}', '#{opts["text"]}', '#{opts["image"]}', '#{opts["title"]}', '#{opts["author"]}', '#{opts["status"]}' )
         RETURNING id, date, text, image, title, author, status;
       SQL
